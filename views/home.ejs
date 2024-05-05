@@ -1,0 +1,62 @@
+<!-- views/home.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom Styles -->
+  <style>
+    .card {
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card-header {
+      text-align: center;
+      background-color: #007bff;
+      color: white;
+      border-radius: 10px 10px 0 0;
+    }
+    .btn {
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <!-- Welcome Card -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Welcome, <%= myEmail %>!</h3>
+          </div>
+          <div class="card-body">
+            <p>We're glad to have you back. Here's what you can do:</p>
+            <!-- Navigation Links -->
+            <div class="form-group">
+              <a href="/change-password" class="btn btn-secondary btn-block">Change Password</a>
+            </div>
+            <div class="form-group">
+              <a href="/display" class="btn btn-secondary btn-block">View All Users</a>
+            </div>
+            <div class="form-group">
+              <a href="/logout" class="btn btn-danger btn-block">Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

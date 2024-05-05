@@ -1,0 +1,61 @@
+<!-- views/userRecord.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Details</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom Styles -->
+  <style>
+    .card {
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card-header {
+      text-align: center;
+      background-color: #007bff;
+      color: white;
+      border-radius: 10px 10px 0 0;
+    }
+    .card-body {
+      padding: 20px;
+    }
+    .info-label {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <!-- Bootstrap Card -->
+        <div class="card">
+          <div class="card-header text-center">
+            <h3>User Details</h3>
+          </div>
+          <div class="card-body">
+            <!-- Displaying User Information -->
+            <p><span class="info-label">Name:</span> <%= user_array.userName %></p>
+            <p><span class="info-label">Email:</span> <%= user_array.userEmail %></p>
+            <p><span class="info-label">Gender:</span> <%= user_array.userGender %></p>
+            <!-- Additional fields can be displayed here, if needed -->
+
+            <!-- Back to Display Page -->
+            <div class="text-center mt-4">
+              <a href="/display" class="btn btn-secondary">Back to User List</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

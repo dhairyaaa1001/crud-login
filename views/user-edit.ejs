@@ -1,0 +1,81 @@
+<!-- views/edit.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit User</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom Styles -->
+  <style>
+    .card {
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card-header {
+      text-align: center;
+      background-color: #007bff;
+      color: white;
+      border-radius: 10px 10px 0 0;
+    }
+    .btn {
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <!-- Bootstrap Card -->
+        <div class="card">
+          <div class="card-header text-center">
+            <h3>Edit User Information</h3>
+          </div>
+          <div class="card-body">
+            <!-- Edit User Form -->
+            <form action="/edit/<%= user_array._id %>" method="post">
+              <!-- Name Field -->
+              <div class="form-group">
+                <label for="userName">Name:</label>
+                <input type="text" id="userName" name="userName" class="form-control" value="<%= user_array.userName %>" required>
+              </div>
+
+              <!-- Email Field -->
+              <div class="form-group">
+                <label for="userEmail">Email:</label>
+                <input type="email" id="userEmail" name="userEmail" class="form-control" value="<%= user_array.userEmail %>" required>
+              </div>
+
+              <!-- Gender Field -->
+              <div class="form-group">
+                <label for="userGender">Gender:</label>
+                <select id="userGender" name="userGender" class="form-control" required>
+                  <option value="Male" <%= user_array.userGender === "Male" ? "selected" : "" %>>Male</option>
+                  <option value="Female" <%= user_array.userGender === "Female" ? "selected" : "" %>>Female</option>
+                  <option value="Other" <%= user_array.userGender === "Other" ? "selected" : "" %>>Other</option>
+                </select>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+              </div>
+
+              <!-- Back to Display Page -->
+              <div class="text-center">
+                <a href="/display" class="btn btn-secondary">Back to User List</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
